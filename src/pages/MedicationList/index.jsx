@@ -1,7 +1,8 @@
 import React from 'react';
+import withAuthentication from '../../auth/withAuthentication';
 
-const CreateMedication = () => {
-    return <div>Create Medication Page</div>;
+const MedicationList = () => {
+    return <div>Medication List Page</div>;
 };
 
-export default CreateMedication;
+export default withAuthentication(MedicationList);

@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
-import MedicationList from './pages/CreateMedication';
-import CreateMedication from './pages/MedicationList';
+import MedicationList from './pages/MedicationList';
+import CreateMedication from './pages/CreateMedication';
 
+const App = () => {
 
-function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -15,6 +15,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
