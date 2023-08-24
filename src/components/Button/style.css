@@ -1,0 +1,35 @@
+.primary--button {
+    background-color: #8BCDE3;
+    color: #000000;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.primary--button:hover {
+    opacity: 0.6;
+}
+
+.secondary--button {
+    background-color: #ffffff;
+    border: 1px solid #8BCDE3;
+    color: #000000;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.danger--button {
+    background-color: red;
+    color: #ffffff;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}

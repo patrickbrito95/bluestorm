@@ -1,0 +1,34 @@
+.wrapper--login {
+    height: calc(100vh - 56px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://www.bluestorm.com.br/assets/img/banner.jpg');
+}
+
+.wrapper-title--login {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wrapper--username-input {
+    position: relative;
+}
+
+.wrapper--password-input {
+    position: relative;
+}
+
+.error-text {
+    position: absolute;
+    font-size: 10px;
+    bottom: 5px;
+    color: red;
+    font-weight: bold;
+}

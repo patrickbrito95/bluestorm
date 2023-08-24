@@ -1,0 +1,53 @@
+.wrapper-password--input {
+    display:flex;
+    position: relative;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    background-color: #d4d4d4;
+}
+
+.password--input {
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0 20px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #d4d4d4;
+}
+
+.showpassword--button {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    height: 23px;
+    cursor: pointer;
+    right: 10px;
+    font-size: 15px;
+}
+
+.showpassword--button:hover {
+    opacity: 0.7;
+}
+
+.text--input {
+    height: 30px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 5px;
+    width: calc(100% - 40px);
+    margin-bottom: 20px;
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #d4d4d4;
+}
+
+label {
+    font-size: 15px;
+    font-weight: bold;
+}
