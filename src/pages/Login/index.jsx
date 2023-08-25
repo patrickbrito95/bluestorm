@@ -89,7 +89,7 @@ const Login = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         {passwordError && <div className="error-text">{passwordError}</div>}
-                        {loginError && <div className="error-text">{loginError}</div>}
+                        {loginError && <div className="error-login">{loginError}</div>}
                     </div>
                     <Button primary onClick={handleLogin}>Login</Button>
                 </Card>
