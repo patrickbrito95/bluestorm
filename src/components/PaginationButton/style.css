@@ -1,0 +1,20 @@
+.wrapper-pagination {
+    display: flex;
+}
+
+.wrapper--paginationButton {
+    border: none;
+    background-color: #d4d4d4;
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.wrapper--paginationButton:hover {
+    opacity: 0.85;
+}
+
+.wrapper--pagination-text {
+    display: flex;
+    align-items: center;
+}

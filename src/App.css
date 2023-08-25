@@ -5,6 +5,11 @@
 
 body {
   margin: 0;
+  overflow-x: scroll;
+}
+
+* {
+  font-family: 'Inter', sans-serif;
 }
 
 
