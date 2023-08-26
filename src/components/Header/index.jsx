@@ -20,6 +20,9 @@ export const Header = ({ isLogged }) => {
                 <div className='wrapper-logout--header'>
                     {isLogged && (
                         <button className='button-logout--header' onClick={logout}>
+                            <div className='text-logout--header'>
+                                Sair
+                            </div>
                             <Icon name="logout" />
                         </button>
                     )}

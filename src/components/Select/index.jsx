@@ -1,9 +1,15 @@
 import React from 'react';
+import './style.css';
 
-export const Select = ({ children, value, onChange }) => {
+export const Select = ({ children, value, onChange, label }) => {
     return (
-        <select value={value} onChange={onChange} className='wrapper--select'>
-            {children}
-        </select>
+        <div className='wrapper-select'>
+            {label && (
+                <label>{label}</label>
+            )}
+            <select value={value} onChange={onChange} className='select'>
+                {children}
+            </select>
+        </div>
     )
 }

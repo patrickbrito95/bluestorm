@@ -1,7 +1,7 @@
 .wrapper--select {
     border: none;
     border-radius: 5px;
-    width: 200px;
+    width: 140px;
     height: 25px;
     font-size: 15px;
     font-weight: 500;
@@ -9,7 +9,7 @@
     background-color: #d4d4d4;
 }
 
-.wrapper-filter--medication-list {
+.wrapper-top--medication-list {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,10 +45,30 @@ td {
     max-width: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
-    border: 1px solid #d4d4d4;  
+    white-space: nowrap;  
     padding: 10px;
     height: 10px;
+    text-align: center;
+}
+
+ .even-row {
+    background-color: #FFFFFF;
+    height: 60px;
+    cursor: pointer;
+}
+
+ .odd-row {
+    background-color: #F9F9F9;
+    height: 60px;
+    cursor: pointer;
+}
+
+.even-row:hover {
+    background-color: #ECEDEF;
+}
+
+.odd-row:hover {
+    background-color: #ECEDEF;
 }
 
 th {
@@ -64,3 +84,20 @@ th {
     margin: 20px 50px;
     text-align: center;
 }
+
+.loading {
+    display: flex;
+    justify-content: center;
+    margin: 150px
+}
+
+.container {
+    margin-top: 75px;
+}
+
+
+@media (max-width: 720px) {
+    .wrapper-top--medication-list {
+      flex-direction: column;
+    }
+  }

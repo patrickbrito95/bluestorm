@@ -3,7 +3,7 @@ import Icon from '../Icon';
 import './style.css';
 
 
-export const Input = ({ password, placeholder, value, onChange, label }) => {
+export const Input = ({ password, placeholder, value, onChange, label, type }) => {
     const [showPassword, setShowPassword] = useState(false)
 
     return (
@@ -26,7 +26,7 @@ export const Input = ({ password, placeholder, value, onChange, label }) => {
                     <label>{label}</label>
                     <input
                         className='text--input'
-                        type="text"
+                        type={type || "text"}
                         placeholder={placeholder}
                         value={value}
                         onChange={onChange}

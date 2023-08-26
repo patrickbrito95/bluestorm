@@ -6,6 +6,7 @@ import './style.css';
 import { Card } from '../../components/Cards';
 import { Input } from '../../components/Inputs';
 import { Button } from '../../components/Button';
+import { CircularProgress } from '@mui/material';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -13,6 +14,7 @@ const Login = () => {
     const [usernameError, setUsernameError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [loginError, setLoginError] = useState('');
+    const [loading, setLoading] = useState(false)
     const navigate = useNavigate();
 
     const isAuthenticated = window.localStorage.getItem('token');
@@ -37,6 +39,7 @@ const Login = () => {
 
         if (username && password && username.length <= 15 && password.length <= 15) {
             try {
+                setLoading(true)
                 const response = await axios.post('https://djbnrrib9e.execute-api.us-east-2.amazonaws.com/v1/login', {
                     username,
                     password,
@@ -45,8 +48,11 @@ const Login = () => {
                 if (response.data) {
                     console.log(response.data)
                     window.localStorage.setItem('token', response.data.token)
+                    setLoading(false)
                     navigate('/medication-list');
+
                 } else {
+                    setLoading(false)
                     console.log('Login failed');
                 }
             } catch (error) {
@@ -91,7 +97,7 @@ const Login = () => {
                         {passwordError && <div className="error-text">{passwordError}</div>}
                         {loginError && <div className="error-login">{loginError}</div>}
                     </div>
-                    <Button primary onClick={handleLogin}>Login</Button>
+                    <Button primary onClick={handleLogin}>{loading ? (<CircularProgress color="inherit" size={16} />) : "Login"}</Button>
                 </Card>
             </div>
         </>

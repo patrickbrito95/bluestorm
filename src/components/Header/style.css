@@ -5,6 +5,9 @@
     background-color: #1f1f20;
     color: #fff;
     padding: 0 20px;
+    position: fixed;
+    width: calc(100% - 35px);
+    top: 0;
 }
 
 .wrapper-left--header {
@@ -14,6 +17,7 @@
     color: #0679a1;
     font-weight: bold;
     font-size: 25px;
+    cursor: default;
 }
 
 .wrapper-right--header {
@@ -25,6 +29,9 @@
 .button-logout--header {
     background-color: transparent;
     border: none;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
     cursor: pointer;
 }
 
@@ -34,4 +41,9 @@
     justify-content: center;
     align-items: center;
     margin-top: 5px;
+}
+
+.text-logout--header {
+    align-self: center;
+    margin-right: 10px;
 }
