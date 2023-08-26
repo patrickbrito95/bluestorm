@@ -7,6 +7,7 @@
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
+    width: 150px;
 }
 
 .primary--button:hover {
@@ -22,6 +23,7 @@
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
+    width: 150px;
 }
 
 .danger--button {
@@ -32,4 +34,5 @@
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
+    width: 150px;
 }

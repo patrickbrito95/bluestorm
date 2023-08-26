@@ -40,3 +40,9 @@
     color: red;
     font-weight: bold;
 }
+
+.wrapper-button--login {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}

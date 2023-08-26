@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { Header } from '../../components/Header';
@@ -97,7 +97,9 @@ const Login = () => {
                         {passwordError && <div className="error-text">{passwordError}</div>}
                         {loginError && <div className="error-login">{loginError}</div>}
                     </div>
-                    <Button primary onClick={handleLogin}>{loading ? (<CircularProgress color="inherit" size={16} />) : "Login"}</Button>
+                    <div className='wrapper-button--login'>
+                        <Button primary onClick={handleLogin}>{loading ? (<CircularProgress color="inherit" size={16} />) : "Login"}</Button>
+                    </div>
                 </Card>
             </div>
         </>

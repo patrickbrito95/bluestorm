@@ -6,6 +6,9 @@ import axios from 'axios';
 import { Select } from '../../components/Select';
 import { Input } from '../../components/Inputs';
 import { Button } from '../../components/Button';
+import Modal from '../../components/Modal';
+import Icon from '../../components/Icon';
+import { CircularProgress } from '@mui/material';
 
 const CreateMedication = () => {
     const [manufacturers, setManufacturers] = useState([]);
@@ -19,6 +22,8 @@ const CreateMedication = () => {
     const [manufactureItemError, setManufactureItemError] = useState('')
     const [issuedOnError, setIssuedOnError] = useState('')
     const [expireOnError, setExpireOnError] = useState('')
+    const [openModal, setOpenModal] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
 
     useEffect(() => {
@@ -45,6 +50,7 @@ const CreateMedication = () => {
 
 
     const createMedication = async () => {
+        setIsLoading(true)
         try {
             const token = localStorage.getItem('token');
             const issuedOnISO = new Date(issuedOn).toISOString();
@@ -81,6 +87,7 @@ const CreateMedication = () => {
             }
 
             if (!manufactureItem || !nameDrug || !issuedOn || !expiresOn || new Date(issuedOnISO) >= new Date(expiresOnISO)) {
+                setIsLoading(false)
                 return
             }
 
@@ -100,37 +107,60 @@ const CreateMedication = () => {
             );
 
             if (response.data) {
-                console.log(response.data)
+                setOpenModal(true)
+                setIsLoading(false)
             } else {
-                console.log('Login failed');
+                console.log('Creation failed');
+                setIsLoading(false)
             }
         } catch (error) {
             console.error('An error occurred:', error);
+            setIsLoading(false)
         }
     };
 
+
+    const closeModal = () => {
+        setManufactureItem('');
+        setNameDrug('');
+        setDrugUnit(0);
+        setIssuedOn(new Date());
+        setExpiresOn(new Date());
+        setOpenModal(false)
+    }
+
     return (
         <div>
+            {openModal && (
+                <Modal isOpen={true} onClose={closeModal}>
+                    <h3>Medicamento Criado com sucesso!</h3>
+                    <div className="wrapper-content--modal">
+                        <Icon name="check" />
+                    </div>
+                </Modal>
+            )}
             <Header isLogged />
             <div className='container'>
                 <h2 align="center">Preencha abaixo os dados do Medicamento:</h2>
+                <Input label="Nome do Medicamento" placeholder="Nome do Medicamento" value={nameDrug} onChange={(e) => setNameDrug(e.target.value)} />
+                {nameDrugError && <div className='date-error'>{nameDrugError}</div>}
+                <Select label="Fabricante" value={manufactureItem} onChange={(e) => setManufactureItem(e.target.value)}>
+                    <option value="">Selecione uma opção</option>
+                    {manufacturers?.data?.map((manufacture) => (
+                        <option value={manufacture.name}>{manufacture.name}</option>
+                    ))}
+                </Select>
+                {manufactureItemError && <div className='date-error'>{manufactureItemError}</div>}
+                <Input label="Quantidade de Unidades" placeholder="Quantidade de Unidades" type="number" value={drugUnit} onChange={(e) => setDrugUnit(e.target.value)} />
+                <Input label="Data de Fabricação" value={issuedOn} type="date" placeholder="Data de Fabricação" onChange={(e) => setIssuedOn(e.target.value)} />
+                {dateError && <div className='date-error'>{dateError}</div>}
+                {issuedOnError && <div className='date-error'>{issuedOnError}</div>}
+                <Input label="Data de Validade" value={expiresOn} type="date" placeholder="Data de Validade" onChange={(e) => setExpiresOn(e.target.value)} />
+                {expireOnError && <div className='date-error'>{expireOnError}</div>}
+                <div className='wrapper-button-bottom'>
+                    <Button primary onClick={createMedication}>{isLoading ? <CircularProgress color="primary" size={16} /> : "Criar"}</Button>
+                </div>
             </div>
-            <Input label="Nome do Medicamento" placeholder="Nome do Medicamento" value={nameDrug} onChange={(e) => setNameDrug(e.target.value)} />
-            {nameDrugError && <div className='date-error'>{nameDrugError}</div>}
-            <Select label="Fabricante" value={manufactureItem} onChange={(e) => setManufactureItem(e.target.value)}>
-                <option value="">Selecione uma opção</option>
-                {manufacturers?.data?.map((manufacture) => (
-                    <option value={manufacture.name}>{manufacture.name}</option>
-                ))}
-            </Select>
-            {manufactureItemError && <div className='date-error'>{manufactureItemError}</div>}
-            <Input label="Quantidade de Unidades" placeholder="Quantidade de Unidades" type="number" value={drugUnit} onChange={(e) => setDrugUnit(e.target.value)} />
-            <Input label="Data de Fabricação" value={issuedOn} type="date" placeholder="Data de Fabricação" onChange={(e) => setIssuedOn(e.target.value)} />
-            {dateError && <div className='date-error'>{dateError}</div>}
-            {issuedOnError && <div className='date-error'>{issuedOnError}</div>}
-            <Input label="Data de Validade" value={expiresOn} type="date" placeholder="Data de Validade" onChange={(e) => setExpiresOn(e.target.value)} />
-            {expireOnError && <div className='date-error'>{expireOnError}</div>}
-            <Button primary onClick={createMedication}>Criar</Button>
         </div>)
 };
 

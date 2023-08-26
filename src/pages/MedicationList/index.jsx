@@ -53,7 +53,7 @@ const MedicationList = () => {
     return (
         <div>
             <Header isLogged />
-            <div className='container'>
+            <div className='container-medication-list'>
                 <div className='wrapper-top--medication-list'>
                     <Input label="Nome do Medicamento" value={search} placeholder="Pesquisar..." onChange={(e) => setSearch(e.target.value)} />
                     <Button primary onClick={() => navigate('/create-medication')}>Novo Medicamento</Button>
