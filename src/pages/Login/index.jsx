@@ -7,6 +7,7 @@ import { Card } from '../../components/Cards';
 import { Input } from '../../components/Inputs';
 import { Button } from '../../components/Button';
 import { CircularProgress } from '@mui/material';
+import bgImage from '../../assets/banner.jpg';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -64,7 +65,7 @@ const Login = () => {
 
     useEffect(() => {
         if (isAuthenticated) {
-            navigate('/medication-list')
+            navigate('/home')
         }
     }, [isAuthenticated])
 
@@ -72,7 +73,7 @@ const Login = () => {
     return (
         <>
             <Header />
-            <div className='wrapper--login'>
+            <div className='wrapper--login' style={{ backgroundImage: `url(${bgImage})` }}>
                 <Card>
                     <div className='wrapper-title--login'>
                         Entrar
@@ -101,7 +102,7 @@ const Login = () => {
                         <Button primary onClick={handleLogin}>{loading ? (<CircularProgress color="inherit" size={16} />) : "Login"}</Button>
                     </div>
                 </Card>
-            </div>
+            </div >
         </>
     );
 };

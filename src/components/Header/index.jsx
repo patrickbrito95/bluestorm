@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import { useNavigate } from "react-router-dom";
 import Icon from '../Icon';
+import logoImage from '../../assets/bluestorm.png'
 
 export const Header = ({ isLogged }) => {
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ export const Header = ({ isLogged }) => {
 
     return (
         <div className='wrapper--header'>
-            <div className='wrapper-left--header'>Bluestorm</div>
+            <div className='wrapper-left--header' onClick={() => navigate('/home')}><img src={logoImage} /></div>
             <div className="wrapper-right--header">
                 <div className='wrapper-logout--header'>
                     {isLogged && (

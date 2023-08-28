@@ -5,9 +5,9 @@
     height: 30px;
     border-radius: 5px;
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 500;
     cursor: pointer;
-    width: 150px;
+    width: 200px;
 }
 
 .primary--button:hover {
@@ -21,7 +21,7 @@
     height: 30px;
     border-radius: 5px;
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 500;
     cursor: pointer;
     width: 150px;
 }
@@ -32,7 +32,7 @@
     height: 30px;
     border-radius: 5px;
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 500;
     cursor: pointer;
     width: 150px;
 }

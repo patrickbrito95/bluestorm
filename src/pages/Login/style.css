@@ -5,7 +5,6 @@
     align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('https://www.bluestorm.com.br/assets/img/banner.jpg');
 }
 
 .wrapper-title--login {
@@ -13,8 +12,7 @@
     justify-content: center;
     font-size: 30px;
     margin-bottom: 20px;
-    font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
 }
 
 .wrapper--username-input {

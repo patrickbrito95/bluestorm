@@ -16,7 +16,7 @@
     width: 100%;
     padding: 0 20px;
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 500;
     background-color: #d4d4d4;
 }
 
@@ -43,11 +43,11 @@
     margin-bottom: 20px;
     margin-top: 5px;
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 500;
     background-color: #d4d4d4;
 }
 
 label {
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 500;
 }

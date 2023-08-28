@@ -22,7 +22,8 @@
     overflow-x: scroll;
     margin: 0 auto;
     border-radius: 15px;
-    margin: 0 50px;
+    margin: 0 auto;
+    width: 1440px;
 }
 
 .wrapper-table--medication-list::-webkit-scrollbar {
@@ -73,7 +74,7 @@ td {
 
 th {
     border: 1px solid #d4d4d4;
-    min-width: 200px;
+    min-width: 100px;
     padding: 10px;
 }
 
