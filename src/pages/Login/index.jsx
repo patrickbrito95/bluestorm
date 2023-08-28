@@ -50,7 +50,7 @@ const Login = () => {
                     console.log(response.data)
                     window.localStorage.setItem('token', response.data.token)
                     setLoading(false)
-                    navigate('/medication-list');
+                    navigate('/home');
 
                 } else {
                     setLoading(false)
