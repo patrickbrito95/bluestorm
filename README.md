@@ -30,7 +30,7 @@ $ npm run dev
 
 ## Tecnologias Utilizadas
 
-O Delfos Dashboard é construído com as seguintes tecnologias:
+O Bluestorm App foi construído com as seguintes tecnologias:
 
 - **React (18.2.0):** Uma biblioteca JavaScript popular para a construção de interfaces de usuário interativas.
 - **Vite (4.4.5):** Um build tool rápido e eficiente para aplicações JavaScript modernas.
